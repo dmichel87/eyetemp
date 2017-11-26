@@ -9,6 +9,13 @@
 import Foundation
 import CoreData
 
+extension Date {
+    
+    func minutes(from date:Date) -> Int {
+        return Calendar.current.dateComponents([.minute], from: date).minute ?? 0
+    }
+}
+
 class Database {
     // MARK: - Core Data stack
     private init() {
@@ -156,6 +163,50 @@ class Database {
         }
         catch {
             Logger.log(message: "Unable to delete managed objects for entity Contacts", event: .s)
+        }
+    }
+    
+    static func canSaveAlert(text:String, context:NSManagedObjectContext) -> Bool {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:"EyeTempAlerts")
+        fetchRequest.predicate = NSPredicate(format: "text = %@", text)
+        do {
+            let records = try context.fetch(fetchRequest)
+            if let records = records as? [NSManagedObject] {
+                if records.count == 0 {
+                    return true
+                }
+                else if records.count > 0 {
+                    if let object = records[0] as? EyeTempAlerts {
+                        Logger.log(message: "Previously saved date \(object.alert_time!) with now \(Date())", event: .i)
+                        if Date().minutes(from: object.alert_time!) > 15 {
+                            return true
+                        }
+                    }
+                }
+                
+            }
+        }
+        catch {
+            Logger.log(message: "Unable to delete managed objects for entity Contacts", event: .s)
+        }
+
+        return false
+    }
+    
+    static func deleteAlert(date:Date, context:NSManagedObjectContext )  {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:"EyeTempAlerts")
+        fetchRequest.predicate = NSPredicate(format: "alert_time = %@", date as NSDate)
+        do {
+            let records = try context.fetch(fetchRequest)
+            if let records = records as? [NSManagedObject] {
+                let object = records[0]
+                context.delete(object)
+                try context.save()
+            }
+        }
+        catch {
+            Logger.log(message: "Unable to delete managed objects for entity EyeTempAlerts", event: .s)
         }
     }
     

@@ -7,4 +7,5 @@ target 'EyeTemp' do
 	pod 'SwiftyJSON'
 	pod 'IHKeyboardAvoiding'
 	pod 'Gloss', '2.0.0-beta.1'
+	pod 'MKRingProgressView'
 end

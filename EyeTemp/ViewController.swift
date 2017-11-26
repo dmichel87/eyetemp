@@ -23,7 +23,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
         self.timer
             .subscribe(onNext: { (msecs) in
-            self.performSegue(withIdentifier: "toOnBoarding", sender: self)
+                let defaults = UserDefaults.standard
+                let notified = defaults.bool(forKey: "NOTIFICATION")
+                if notified {
+                    self.performSegue(withIdentifier: "toHomeViewController", sender: self)
+                }
+                else {
+                    self.performSegue(withIdentifier: "toOnBoarding", sender: self)
+                }
         })
         .disposed(by: self.disposeBag)
 

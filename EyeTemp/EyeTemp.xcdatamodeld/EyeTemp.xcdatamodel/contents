@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13241" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13533" systemVersion="17B48" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Appliances" representedClassName="Appliances" syncable="YES">
         <attribute name="appliance_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="appliance_name" optional="YES" attributeType="String" syncable="YES"/>
@@ -22,9 +22,14 @@
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
+    <entity name="EyeTempAlerts" representedClassName="EyeTempAlerts" syncable="YES">
+        <attribute name="alert_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <elements>
         <element name="Appliances" positionX="-54" positionY="9" width="128" height="120"/>
         <element name="Contacts" positionX="-36" positionY="36" width="128" height="90"/>
         <element name="Devices" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="EyeTempAlerts" positionX="-36" positionY="45" width="128" height="75"/>
     </elements>
 </model>

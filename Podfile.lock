@@ -1,6 +1,7 @@
 PODS:
   - Gloss (2.0.0-beta.1)
   - IHKeyboardAvoiding (4.1)
+  - MKRingProgressView (1.1.4)
   - RxCocoa (4.0.0):
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
@@ -9,6 +10,7 @@ PODS:
 DEPENDENCIES:
   - Gloss (= 2.0.0-beta.1)
   - IHKeyboardAvoiding
+  - MKRingProgressView
   - RxCocoa (~> 4.0)
   - RxSwift (~> 4.0)
   - SwiftyJSON
@@ -16,10 +18,11 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   Gloss: 3224f4d6e345138475216855a32e880d9e03e6d2
   IHKeyboardAvoiding: 5f42b8ff1f64144ea425b1954e4311eb6bf9077a
+  MKRingProgressView: fbcfe6e5485404fc4e4bc3becbed4a1c8c7df715
   RxCocoa: d62846ca96495d862fa4c59ea7d87e5031d7340e
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: df0b0d9433f7d4176252894ca10222f16206d757
+PODFILE CHECKSUM: 968bf5fa17016a2a59df28e20b8812366681ecea
 
 COCOAPODS: 1.3.1

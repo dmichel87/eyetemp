@@ -13,13 +13,21 @@ import Gloss
 class DweetContent : Gloss.Decodable {
 
     var settings:String?
+    var t_alert:Int?
+    var v_alert:Int?
+    var t:Double?
 
     required init?(json: JSON) {
         self.settings = "settings" <~~ json
+        self.t_alert = "t_alert" <~~ json
+        self.v_alert = "v_alert" <~~ json
+        self.t = "t" <~~ json
     }
     
     
 }
+
+
 
 class DweetWith : Gloss.Decodable {
     
@@ -72,3 +80,5 @@ class DweetForJson : Gloss.Decodable {
     
     
 }
+
+

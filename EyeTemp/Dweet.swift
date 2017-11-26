@@ -14,6 +14,7 @@ enum DweetStates: String {
     case rg = "resetget" //get
     case s = "settings" // initialize
     case sg = "settingsget" // info
+    case ming = "monitoring"
 }
 
 class Dweet: NSObject {
@@ -22,6 +23,7 @@ class Dweet: NSObject {
     var error:String?
     var dweetUrl:URLComponents?
     var type:DweetStates?
+    var time:NSInteger?
     
     init(url:String, params:String?, state:DweetStates) {
         dweetUrl = URLComponents(string: url)

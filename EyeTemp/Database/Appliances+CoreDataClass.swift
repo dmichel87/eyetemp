@@ -9,8 +9,11 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 @objc(Appliances)
 public class Appliances: NSManagedObject {
+    public var message:UILabel?
+    public var activity:UIActivityIndicatorView?
 
 }
