@@ -6,6 +6,6 @@ target 'EyeTemp' do
     pod 'RxCocoa',    '~> 4.0'
 	pod 'SwiftyJSON'
 	pod 'IHKeyboardAvoiding'
-	pod 'Gloss', '2.0.0-beta.1'
+	pod 'Gloss', '2.0'
 	pod 'MKRingProgressView'
 end

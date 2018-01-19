@@ -328,3 +328,14 @@ Pods/Target Support Files/SwiftyJSON/SwiftyJSON-prefix.pch
 Pods/Target Support Files/SwiftyJSON/SwiftyJSON-umbrella.h
 Pods/Target Support Files/SwiftyJSON/SwiftyJSON.modulemap
 Pods/Target Support Files/SwiftyJSON/SwiftyJSON.xcconfig
+Pods/MKRingProgressView/LICENSE
+Pods/MKRingProgressView/README.md
+Pods/MKRingProgressView/MKRingProgressView/MKGradientGenerator.swift
+Pods/MKRingProgressView/MKRingProgressView/MKRingProgressView.swift
+Pods/Pods.xcodeproj/xcuserdata/rantony.xcuserdatad/xcschemes/MKRingProgressView.xcscheme
+Pods/Target Support Files/MKRingProgressView/Info.plist
+Pods/Target Support Files/MKRingProgressView/MKRingProgressView-dummy.m
+Pods/Target Support Files/MKRingProgressView/MKRingProgressView-prefix.pch
+Pods/Target Support Files/MKRingProgressView/MKRingProgressView-umbrella.h
+Pods/Target Support Files/MKRingProgressView/MKRingProgressView.modulemap
+Pods/Target Support Files/MKRingProgressView/MKRingProgressView.xcconfig

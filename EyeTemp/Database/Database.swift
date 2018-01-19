@@ -242,6 +242,63 @@ class Database {
         return result
     }
     
+    static func saveAlert(val:Bool) {
+        let defaults = UserDefaults.standard
+        defaults.set(val, forKey: "ALERT_RECIEVED")
+    }
+    
+    static func getAlert() -> Bool {
+        return UserDefaults.standard.bool(forKey: "ALERT_RECIEVED")
+    }
+    
+    static func addAlert(text:String, context:NSManagedObjectContext) {
+        do {
+            let alert = EyeTempAlerts(context:context)
+            alert.alert_time = Date()
+            alert.text = text
+            try context.save()
+        }
+        catch {
+            Logger.log(message: "Unable to save alert", event: .s)
+        }
+    }
+    
+    static func getAlertConfig() -> [Alert]? {
+        do {
+            let file = Bundle.main.path(forResource: "alerts", ofType: "json")
+            let jsonData = try Data(contentsOf:  URL(fileURLWithPath:file!)) //try String(contentsOf: URL(fileURLWithPath:file!), encoding: String.Encoding.utf8)
+            guard let alerts = [Alert].from(data: jsonData) else {
+                return nil
+            }
+            return alerts
+        }
+        catch {
+            
+        }
+        return nil
+    }
+    
+    static func getLastAlert(context:NSManagedObjectContext) -> EyeTempAlerts? {
+        
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName:"EyeTempAlerts")
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key:"alert_time", ascending:false)]
+        fetchRequest.fetchLimit = 1
+        fetchRequest.returnsObjectsAsFaults = false
+        do {
+            let records = try context.fetch(fetchRequest)
+            if records.count > 0 {
+                return records[0] as? EyeTempAlerts
+            }
+            
+        }
+        catch {
+            Logger.log(message: "Unable to fetch managed objects for entity EyeTempAlerts", event: .s)
+        }
+        return nil
+
+    }
+    
+    
     // MARK: - Core Data Saving support
     
     static func saveContext () {

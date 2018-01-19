@@ -18,21 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        if (launchOptions?[.remoteNotification]) != nil {
-            Logger.log(message: "Notification recieved", event: .i)
-            let defaults = UserDefaults.standard
-            defaults.set(true, forKey: "NOTIFICATION")
-        
-        }
         
         let center = UNUserNotificationCenter.current()
-        center.delegate = self
+        //center.delegate = self
         center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
             if granted {
                 Logger.log(message: "User has granted permission", event: .i)
             }
         }
-    
+        application.registerForRemoteNotifications()
         
         return true
     }
@@ -61,6 +55,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
         Database.saveContext()
     }
     
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let tokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        Logger.log(message: "Succesfully registered remote notification \(tokenString)", event: .d)
+        PushNotifications.Instance.postToken(token: tokenString)
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        Logger.log(message: "Failed to register remote notification", event: .d)
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        Logger.log(message: "Did recieve remote notification \(userInfo)", event: .d)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "com.hubspire.EyeTemp.push"), object: userInfo)
+
+    }
+    
     
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
@@ -69,6 +79,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         Logger.log(message: "Did recieve response", event: .s)
+        let content = response.notification.request.content
+        Logger.log(message: "Title =\(content.title) Body=\(content.body) UserInfo=\(content.userInfo)", event: .d)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "com.hubspire.EyeTemp.push"), object: content.userInfo)
+        
+        Database.saveAlert(val: true)
+        completionHandler()
+        
+        
     }
 
  

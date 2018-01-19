@@ -15,6 +15,7 @@ class ItemAddViewController: UIViewController {
 
     @IBOutlet weak var itemNameTextField: DesignableTextField!
     @IBOutlet weak var deviceNameTextField: DesignableTextField!
+    @IBOutlet weak var timeTextField: DesignableTextField!
     @IBOutlet weak var addButton: DesignableButton!
     var itemAdded:Variable<Bool> = Variable<Bool>(false)
     
@@ -39,6 +40,7 @@ class ItemAddViewController: UIViewController {
             appliance.appliance_name = self.itemNameTextField.text!
             appliance.mapped_device = self.deviceNameTextField.text!
             appliance.mapped_device_id = self.mappedDevice.device_id!
+            appliance.alert_time = self.timeTextField.text!
             appliance.is_monitoring = false
             Database.saveContext()
             self.itemAdded.value = true
@@ -65,6 +67,19 @@ class ItemAddViewController: UIViewController {
                 let device = deviceViewControler.selectedDevice
                 self.deviceNameTextField.text = device?.device_name
                 self.mappedDevice = device
+            })
+            .disposed(by: self.disposeBag)
+            
+        }
+        else if segue.identifier == "toItemAddList" {
+            let itemList = segue.destination as! ItemsListViewController
+            itemList.hasChosen.asObservable()
+            .subscribe(onNext: { val in
+                if val {
+                    let alert = itemList.selectedAlert
+                    self.itemNameTextField.text = alert?.appliance
+                    self.timeTextField.text = alert?.alertTime
+                }
             })
             .disposed(by: self.disposeBag)
             

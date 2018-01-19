@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17B1003" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Appliances" representedClassName="Appliances" syncable="YES">
+        <attribute name="alert_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="appliance_id" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="appliance_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="is_monitoring" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="mapped_device" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mapped_device_id" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Contacts" representedClassName="Contacts" syncable="YES">
+        <attribute name="contact_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Devices" representedClassName="Devices" syncable="YES">
+        <attribute name="device_id" attributeType="String" minValueString="12" syncable="YES"/>
+        <attribute name="device_name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="is_mapped" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="device_name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="EyeTempAlerts" representedClassName="EyeTempAlerts" syncable="YES">
+        <attribute name="alert_time" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Appliances" positionX="-54" positionY="9" width="128" height="135"/>
+        <element name="Contacts" positionX="-36" positionY="36" width="128" height="90"/>
+        <element name="Devices" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="EyeTempAlerts" positionX="-36" positionY="45" width="128" height="75"/>
+    </elements>
+</model>

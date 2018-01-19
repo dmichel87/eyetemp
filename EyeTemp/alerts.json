@@ -1,0 +1,176 @@
+[
+	{
+		"Appliance": "Bacon fryer",
+		"Alert time": "45",
+		"Note": "",
+		"Placement": ""
+	},
+	{
+		"Appliance": "BBQ",
+		"Alert time": "91",
+		"Note": "",
+		"Placement": "Place device on the handle"
+	},
+	{
+		"Appliance": "Candle - large",
+		"Alert time": "240",
+		"Note": "Note: Candle must be in a holder such as glass or ceramic.",
+		"Placement": "Place device towards bottom of candle"
+	},
+	{
+		"Appliance": "Candle - medium",
+		"Alert time": "180",
+		"Note": "Note: Candle must be in a holder such as glass or ceramic.",
+		"Placement": "Place device towards bottom of candle"
+	},
+	{
+		"Appliance": "Candle - small",
+		"Alert time": "150",
+		"Note": "Note: Candle must be in a holder such as glass or ceramic.",
+		"Placement": "Place device towards bottom of candle"
+	},
+	{
+		"Appliance": "Christmas Tree",
+		"Alert time": "15",
+		"Note": "",
+		"Placement": "Place device in middle of tree"
+	},
+	{
+		"Appliance": "Coffee Maker",
+		"Alert time": "61",
+		"Note": "",
+		"Placement": "Place device towards the bottom of machine "
+	},
+	{
+		"Appliance": "Cooktop",
+		"Alert time": "61",
+		"Note": "Note: You may have to adjust placement if you receive a high temperature alert that the device gets to hot from the orginal placement. Test with caution.",
+		"Placement": "Place device on outside of nozzles on the cooktop away from the heated burners"
+	},
+	{
+		"Appliance": "Deep fat fryer",
+		"Alert time": "37",
+		"Note": "",
+		"Placement": "Place device on the handle"
+	},
+	{
+		"Appliance": "Dishwasher",
+		"Alert time": "30",
+		"Note": "",
+		"Placement": "Place device towards top of device"
+	},
+	{
+		"Appliance": "Dryer ",
+		"Alert time": "60",
+		"Note": "",
+		"Placement": "Place device towards top of device"
+	},
+	{
+		"Appliance": "Electrical Heater - small",
+		"Alert time": "180",
+		"Note": "",
+		"Placement": "Place device where there is room on heater away from any exposed electrical burners"
+	},
+	{
+		"Appliance": "Electrical Heater - large",
+		"Alert time": "240",
+		"Note": "",
+		"Placement": "Place device where there is room on heater away from any exposed electrical burners"
+	},
+	{
+		"Appliance": "Espresso Machine",
+		"Alert time": "61",
+		"Note": "",
+		"Placement": "Place device towards the bottom of machine"
+	},
+	{
+		"Appliance": "Griddles",
+		"Alert time": "36",
+		"Note": "",
+		"Placement": "Place device on side of griddle"
+	},
+	{
+		"Appliance": "Grills (small)",
+		"Alert time": "19",
+		"Note": "",
+		"Placement": "Place device on handle of grill"
+	},
+	{
+		"Appliance": "Hair Iron",
+		"Alert time": "91",
+		"Note": "",
+		"Placement": "Place device on handle where room allows"
+	},
+	{
+		"Appliance": "Hot Plates",
+		"Alert time": "31",
+		"Note": "",
+		"Placement": "Place device on where settings are"
+	},
+	{
+		"Appliance": "Iron",
+		"Alert time": "31",
+		"Note": "",
+		"Placement": "Place device on handle of iron"
+	},
+	{
+		"Appliance": "Oven",
+		"Alert time": "91",
+		"Note": "",
+		"Placement": "Place device on handle"
+	},
+	{
+		"Appliance": "Panini makers",
+		"Alert time": "21",
+		"Note": "",
+		"Placement": "Place device on handle"
+	},
+	{
+		"Appliance": "Pizza Makers",
+		"Alert time": "41",
+		"Note": "",
+		"Placement": "Place device on where settings are"
+	},
+	{
+		"Appliance": "Rice cooker",
+		"Alert time": "20",
+		"Note": "",
+		"Placement": "Place device on the handle"
+	},
+	{
+		"Appliance": "Slow Cooker/Crock pot",
+		"Alert time": "481",
+		"Note": "",
+		"Placement": "Place device on handle"
+	},
+	{
+		"Appliance": "Steam cooker",
+		"Alert time": "40",
+		"Note": "",
+		"Placement": "Place device on handle"
+	},
+	{
+		"Appliance": "Steamer",
+		"Alert time": "50",
+		"Note": "",
+		"Placement": "Place device on where settings are usually on the bottom of the steamer"
+	},
+	{
+		"Appliance": "Toaster oven",
+		"Alert time": "91",
+		"Note": "",
+		"Placement": "Place device on handle"
+	},
+	{
+		"Appliance": "Other ",
+		"Alert time": "15",
+		"Note": "",
+		"Placement": "Be cautious of placement of device. Do not put on directly heated surfaces."
+	},
+	{
+		"Appliance": "Waffle maker",
+		"Alert time": "31",
+		"Note": "",
+		"Placement": "Place device on handle"
+	},
+]

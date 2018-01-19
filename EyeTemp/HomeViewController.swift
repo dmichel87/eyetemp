@@ -38,6 +38,7 @@ class HomeViewController: UIViewController {
     var showLogView:Variable<Bool> = Variable<Bool>(false)
     var settingsGetDispose:DisposeBag!
     var appReady:Variable<Bool> = Variable<Bool>(false)
+    var alertInfo:[String:Any]?
     
     
     func convertToDictionary(text: String) -> [String: Any]? {
@@ -51,8 +52,33 @@ class HomeViewController: UIViewController {
         return nil
     }
     
+    func applicationEnteredForeground(notification: NSNotification) {
+        if Database.getAlert() {
+            self.performSegue(withIdentifier: "toAlertVC", sender: self)
+        }
+    }
+    
+    func appPostedPushNotification(notification:NSNotification) {
+        
+        if let obj = notification.object as? [String:Any] {
+            Logger.log(message: "Recieved push \(obj)", event: .d)
+            let t_message = obj["t_message"]
+            let v_message = obj["v_message"]
+            self.alertInfo = obj
+            Logger.log(message: "t_message = \(t_message) v_message = \(v_message)", event: .i)
+            self.performSegue(withIdentifier: "toAlertVC", sender: self)
+        }
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(appPostedPushNotification), name: NSNotification.Name(rawValue: "com.hubspire.EyeTemp.push"), object: nil)
+        
+
+
+        //NotificationCenter.default.addObserver(self, selector: #selector(applicationEnteredForeground), name: NSNotification.Name.UIApplicationWillEnterForeground, object: nil)
+        
         self.tableDispose = DisposeBag()
         self.settingsGetDispose = DisposeBag()
         self.items = Database.fetchRecordsForEntity(entity: "Appliances", context: Database.context) as! [Appliances]
@@ -163,7 +189,8 @@ class HomeViewController: UIViewController {
                             if let jsonStr = self.convertToDictionary(text: resp) {
                                 let dg = DweetForJson(json: jsonStr)
                                 if let set = dg?.with?.content?.settings {
-                                    if set == "1,45" {
+                                    let check = "1,\(monitor.monitoringAppliance.alert_time!)"
+                                    if set == check {
                                         //resetGet.value = true
                                         
                                         DispatchQueue.main.async {
@@ -254,7 +281,8 @@ class HomeViewController: UIViewController {
                 resetSuccess
                 .subscribe(onNext: { val in
                     if val {
-                        monitor.dweetRequest.onNext(Dweet(url: "https://dweet.io/dweet/for/\(device)", params: "settings=1,45", state:DweetStates.s))
+                        let params = "1,\(monitor.monitoringAppliance.alert_time!)"
+                        monitor.dweetRequest.onNext(Dweet(url: "https://dweet.io/dweet/for/\(device)", params: "settings=\(params)", state:DweetStates.s))
                         
                         self.timer.subscribe(onNext: { (time) in
                             let d = Dweet(url: "http://dweet.io/get/latest/dweet/for/\(device)", params: nil, state:monitor.isAppReady ? DweetStates.ming : DweetStates.sg)
@@ -271,7 +299,7 @@ class HomeViewController: UIViewController {
                 })
                 .disposed(by: self.disposeBag)
                 
-                self.appReady.asObservable()
+                /*self.appReady.asObservable()
                 .subscribe(onNext: { val in
                     if val {
                         self.bgTimer.subscribe(onNext: { (time) in
@@ -284,7 +312,7 @@ class HomeViewController: UIViewController {
                         .disposed(by: self.disposeBag)
                     }
                 })
-                .disposed(by: self.disposeBag)
+                .disposed(by: self.disposeBag)*/
                 
                 
                 
@@ -325,6 +353,13 @@ class HomeViewController: UIViewController {
                 }
             })
             .disposed(by: self.disposeBag)
+        }
+        else if segue.identifier == "toAlertVC" {
+            let alertVc = segue.destination as! AlertViewController
+            if let alert = self.alertInfo {
+                alertVc.t_message = alert["t_message"] as? String
+                alertVc.v_message = alert["v_message"] as? String
+            }
         }
     }
     

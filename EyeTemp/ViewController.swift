@@ -15,7 +15,21 @@ class ViewController: UIViewController {
     
     var timer = Observable<NSInteger>.interval(2.0, scheduler: MainScheduler.instance)
     var disposeBag:DisposeBag!
+    var alertInfo:[String:Any]?
 
+
+    func appPostedPushNotification(notification:NSNotification) {
+        
+        if let obj = notification.object as? [String:Any] {
+            Logger.log(message: "Recieved push \(obj)", event: .d)
+            let t_message = obj["t_message"]
+            let v_message = obj["v_message"]
+            self.alertInfo = obj
+            Logger.log(message: "t_message = \(t_message) v_message = \(v_message)", event: .i)
+            self.performSegue(withIdentifier: "toHomeViewController", sender: self)
+        }
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

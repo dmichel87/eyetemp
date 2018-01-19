@@ -19,6 +19,7 @@ extension Appliances {
     }
 
     @NSManaged public var appliance_id: Int16
+    @NSManaged public var alert_time: String?
     @NSManaged public var appliance_name: String?
     @NSManaged public var mapped_device: String?
     @NSManaged public var is_monitoring:Bool

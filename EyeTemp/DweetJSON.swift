@@ -10,7 +10,7 @@ import Gloss
 
 
 
-class DweetContent : Gloss.Decodable {
+class DweetContent : JSONDecodable {
 
     var settings:String?
     var t_alert:Int?
@@ -29,7 +29,7 @@ class DweetContent : Gloss.Decodable {
 
 
 
-class DweetWith : Gloss.Decodable {
+class DweetWith : JSONDecodable {
     
     var thing:String?
     var created:String?
@@ -47,7 +47,7 @@ class DweetWith : Gloss.Decodable {
     
 }
 
-class DweetGetLatest : Gloss.Decodable {
+class DweetGetLatest : JSONDecodable {
     
     var this:String?
     var by:String?
@@ -64,7 +64,7 @@ class DweetGetLatest : Gloss.Decodable {
     
 }
 
-class DweetForJson : Gloss.Decodable {
+class DweetForJson : JSONDecodable {
     
     var this:String?
     var by:String?

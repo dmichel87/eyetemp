@@ -85,12 +85,17 @@
 		507249511FBA58A100302C8E /* EyeTempAlerts+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072494F1FBA58A100302C8E /* EyeTempAlerts+CoreDataClass.swift */; };
 		5072498D1FBBC23600302C8E /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072498C1FBBC23600302C8E /* MenuViewController.swift */; };
 		507249911FBF340600302C8E /* Utilitis.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507249901FBF340600302C8E /* Utilitis.swift */; };
+		507DD6111FD845F500F00C65 /* PushNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507DD6101FD845F500F00C65 /* PushNotifications.swift */; };
 		50889D171F976138000D9C08 /* OnboardingAddDeviceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50889D161F976138000D9C08 /* OnboardingAddDeviceViewController.swift */; };
 		50889D191F9767B6000D9C08 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50889D181F9767B6000D9C08 /* Logger.swift */; };
 		50889D1B1F977E8E000D9C08 /* OnboardingAddContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50889D1A1F977E8E000D9C08 /* OnboardingAddContactViewController.swift */; };
 		50889D1D1F97978E000D9C08 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50889D1C1F97978E000D9C08 /* HomeViewController.swift */; };
 		50957D2F1FAB353D00E6CD3D /* Dweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50957D2E1FAB353D00E6CD3D /* Dweet.swift */; };
 		5095B4A71FA66DD2002782FE /* ContactsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095B4A61FA66DD2002782FE /* ContactsViewController.swift */; };
+		50B9D4A61FF15F83000F4ED0 /* alerts.json in Resources */ = {isa = PBXBuildFile; fileRef = 50B9D4A51FF15F83000F4ED0 /* alerts.json */; };
+		50B9D4A81FF177B5000F4ED0 /* ItemsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B9D4A71FF177B5000F4ED0 /* ItemsListViewController.swift */; };
+		50B9D4AA1FF17903000F4ED0 /* AlertList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B9D4A91FF17902000F4ED0 /* AlertList.swift */; };
+		50D249731FF17BA300288A09 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D249721FF17BA300288A09 /* Alert.swift */; };
 		50F3C8321FA6940D0062ADAF /* ContactsConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F3C8311FA6940D0062ADAF /* ContactsConfigurationViewController.swift */; };
 		50F3C8341FA7CEFF0062ADAF /* Monitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50F3C8331FA7CEFF0062ADAF /* Monitor.swift */; };
 /* End PBXBuildFile section */
@@ -199,12 +204,19 @@
 		5072494F1FBA58A100302C8E /* EyeTempAlerts+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EyeTempAlerts+CoreDataClass.swift"; sourceTree = "<group>"; };
 		5072498C1FBBC23600302C8E /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		507249901FBF340600302C8E /* Utilitis.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilitis.swift; sourceTree = "<group>"; };
+		507DD60F1FD82E7E00F00C65 /* EyeTemp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EyeTemp.entitlements; sourceTree = "<group>"; };
+		507DD6101FD845F500F00C65 /* PushNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushNotifications.swift; sourceTree = "<group>"; };
 		50889D161F976138000D9C08 /* OnboardingAddDeviceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAddDeviceViewController.swift; sourceTree = "<group>"; };
 		50889D181F9767B6000D9C08 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		50889D1A1F977E8E000D9C08 /* OnboardingAddContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingAddContactViewController.swift; sourceTree = "<group>"; };
 		50889D1C1F97978E000D9C08 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		50957D2E1FAB353D00E6CD3D /* Dweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dweet.swift; sourceTree = "<group>"; };
 		5095B4A61FA66DD2002782FE /* ContactsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsViewController.swift; sourceTree = "<group>"; };
+		50B9D4A51FF15F83000F4ED0 /* alerts.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = alerts.json; sourceTree = "<group>"; };
+		50B9D4A71FF177B5000F4ED0 /* ItemsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemsListViewController.swift; sourceTree = "<group>"; };
+		50B9D4A91FF17902000F4ED0 /* AlertList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertList.swift; sourceTree = "<group>"; };
+		50D249721FF17BA300288A09 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		50D249741FF19E5600288A09 /* EyeTemp_2.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = EyeTemp_2.0.xcdatamodel; sourceTree = "<group>"; };
 		50F3C8311FA6940D0062ADAF /* ContactsConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsConfigurationViewController.swift; sourceTree = "<group>"; };
 		50F3C8331FA7CEFF0062ADAF /* Monitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Monitor.swift; sourceTree = "<group>"; };
 		F81FBEBC6B1DFACC02726B9A /* Pods-EyeTemp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EyeTemp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-EyeTemp/Pods-EyeTemp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -257,6 +269,8 @@
 				50106BC21FA13D0F007D2037 /* Devices+CoreDataProperties.swift */,
 				50106BC31FA13D0F007D2037 /* Appliances+CoreDataClass.swift */,
 				50106BC41FA13D0F007D2037 /* Devices+CoreDataClass.swift */,
+				50B9D4A91FF17902000F4ED0 /* AlertList.swift */,
+				50D249721FF17BA300288A09 /* Alert.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -286,18 +300,22 @@
 		506778841F685F6F00862861 /* EyeTemp */ = {
 			isa = PBXGroup;
 			children = (
+				50B9D4A51FF15F83000F4ED0 /* alerts.json */,
+				507DD60F1FD82E7E00F00C65 /* EyeTemp.entitlements */,
 				50106BBD1FA13D0F007D2037 /* Database */,
 				506778DD1F68659100862861 /* Spring */,
 				506778CE1F68600100862861 /* Fonts */,
 				506778851F685F6F00862861 /* AppDelegate.swift */,
 				506778871F685F6F00862861 /* ViewController.swift */,
 				506778891F685F6F00862861 /* Main.storyboard */,
+				50B9D4A71FF177B5000F4ED0 /* ItemsListViewController.swift */,
 				50F3C8311FA6940D0062ADAF /* ContactsConfigurationViewController.swift */,
 				5067788F1F685F6F00862861 /* Assets.xcassets */,
 				506778911F685F6F00862861 /* LaunchScreen.storyboard */,
 				506778941F685F6F00862861 /* Info.plist */,
 				5067788C1F685F6F00862861 /* EyeTemp.xcdatamodeld */,
 				501176DE1F883AEE00B85203 /* ItemAddViewController.swift */,
+				507DD6101FD845F500F00C65 /* PushNotifications.swift */,
 				501176E01F88493900B85203 /* Extensions.swift */,
 				501176E21F89341300B85203 /* DeviceAddViewController.swift */,
 				501176E41F893C2A00B85203 /* ContactAddViewController.swift */,
@@ -486,6 +504,9 @@
 							com.apple.BackgroundModes = {
 								enabled = 1;
 							};
+							com.apple.Push = {
+								enabled = 1;
+							};
 						};
 					};
 					506778981F685F6F00862861 = {
@@ -533,6 +554,7 @@
 				506778901F685F6F00862861 /* Assets.xcassets in Resources */,
 				5067788B1F685F6F00862861 /* Main.storyboard in Resources */,
 				506778D61F68638C00862861 /* Dosis-Bold.otf in Resources */,
+				50B9D4A61FF15F83000F4ED0 /* alerts.json in Resources */,
 				506778CB1F685FF500862861 /* CocoGothic-Light_trial.ttf in Resources */,
 				506778C61F685FF500862861 /* CocoGothic-BoldItalic_trial.ttf in Resources */,
 				506778C51F685FF500862861 /* CocoGothic-Heavy_trial.ttf in Resources */,
@@ -651,6 +673,7 @@
 				5072498D1FBBC23600302C8E /* MenuViewController.swift in Sources */,
 				506778FF1F68659100862861 /* BlurView.swift in Sources */,
 				506779181F68659100862861 /* UnwindSegue.swift in Sources */,
+				50B9D4AA1FF17903000F4ED0 /* AlertList.swift in Sources */,
 				500233CA1FABD650002229AB /* DweetJSON.swift in Sources */,
 				5067790A1F68659100862861 /* LoadingView.swift in Sources */,
 				506779131F68659100862861 /* SpringTextField.swift in Sources */,
@@ -665,6 +688,7 @@
 				50106BC91FA13D0F007D2037 /* Devices+CoreDataProperties.swift in Sources */,
 				506779061F68659100862861 /* DesignableView.swift in Sources */,
 				50889D1B1F977E8E000D9C08 /* OnboardingAddContactViewController.swift in Sources */,
+				50D249731FF17BA300288A09 /* Alert.swift in Sources */,
 				506779031F68659100862861 /* DesignableTabBarController.swift in Sources */,
 				501176DF1F883AEE00B85203 /* ItemAddViewController.swift in Sources */,
 				50106BC61FA13D0F007D2037 /* Contacts+CoreDataClass.swift in Sources */,
@@ -683,6 +707,7 @@
 				506779051F68659100862861 /* DesignableTextView.swift in Sources */,
 				50106BCD1FA145C5007D2037 /* RxKeyboard.swift in Sources */,
 				50F3C8321FA6940D0062ADAF /* ContactsConfigurationViewController.swift in Sources */,
+				507DD6111FD845F500F00C65 /* PushNotifications.swift in Sources */,
 				506779151F68659100862861 /* SpringView.swift in Sources */,
 				50106BC51FA13D0F007D2037 /* Contacts+CoreDataProperties.swift in Sources */,
 				50106BCA1FA13D0F007D2037 /* Appliances+CoreDataClass.swift in Sources */,
@@ -698,6 +723,7 @@
 				506779011F68659100862861 /* DesignableImageView.swift in Sources */,
 				506778861F685F6F00862861 /* AppDelegate.swift in Sources */,
 				501176E51F893C2A00B85203 /* ContactAddViewController.swift in Sources */,
+				50B9D4A81FF177B5000F4ED0 /* ItemsListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -852,6 +878,7 @@
 			baseConfigurationReference = F81FBEBC6B1DFACC02726B9A /* Pods-EyeTemp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EyeTemp/EyeTemp.entitlements;
 				DEVELOPMENT_TEAM = TRXHR4835Y;
 				INFOPLIST_FILE = EyeTemp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -866,6 +893,7 @@
 			baseConfigurationReference = 43DAB3A279B7ED341F87043C /* Pods-EyeTemp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = EyeTemp/EyeTemp.entitlements;
 				DEVELOPMENT_TEAM = TRXHR4835Y;
 				INFOPLIST_FILE = EyeTemp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -978,9 +1006,10 @@
 		5067788C1F685F6F00862861 /* EyeTemp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				50D249741FF19E5600288A09 /* EyeTemp_2.0.xcdatamodel */,
 				5067788D1F685F6F00862861 /* EyeTemp.xcdatamodel */,
 			);
-			currentVersion = 5067788D1F685F6F00862861 /* EyeTemp.xcdatamodel */;
+			currentVersion = 50D249741FF19E5600288A09 /* EyeTemp_2.0.xcdatamodel */;
 			path = EyeTemp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
